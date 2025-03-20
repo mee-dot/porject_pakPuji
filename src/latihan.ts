@@ -32,7 +32,7 @@ console.log("Hasil dari 2 * 5 adalah =", sum(2, 5));
 const buah: string[] = ["Apel", "Jeruk", "Alpukat"];
 console.log(buah);
 
-// Class constructor
+// Class
 class Brands {
     merk: string;
     warna: string;
@@ -54,6 +54,73 @@ const mobil2 = new Brands ("Xenia", "Abu - Abu", 2018);
 
 mobil1.mobil();
 mobil2.mobil();
+
+// extends
+class Smartphone {
+    color: string;
+    brand: string;
+    model: any;
+
+    constructor (color: string, brand: string, model: any){
+        this.color = color;
+        this.brand = brand;
+        this.model = model;
+    }
+
+    charging(){
+        console.log(`${this.model} fast charging`);
+    }
+}
+
+class iOS extends Smartphone {
+    airDrop(){
+        console.log(`iOs have a behavior Airdrop`);
+    }
+}
+
+class Android extends Smartphone {
+    splitScreen(){
+        console.log(`Android a have split screen`);
+    }
+}
+
+const ios = new iOS ("Black", "Iphone", "16 Pro Max");
+const android = new Android ("Silver", "Samsung", "S25 Ultra");
+
+ios.charging();
+ios.airDrop();
+
+android.charging();
+android.splitScreen();
+
+// Arrow function
+const usia = (umur: number): number => umur;
+
+let usiaSekarang = usia(21);
+console.log("Usia saya sekarang adalah :", usiaSekarang);
+
+// Object
+const user = {
+    id: "122",
+    username: "helmimahendra",
+    email: "helmimahendra123@gmail.com",
+    password: "belajar",
+}
+
+console.log(user.username);
+
+// interface
+interface Absen {
+    npm: number;
+    nama: string;
+}
+
+const absen: Absen = {
+    npm: 22430115,
+    nama: "Helmi Luthfi Mahendra",
+}
+
+console.log(absen.nama);
 
 // Module
 import { Module } from "./module";
